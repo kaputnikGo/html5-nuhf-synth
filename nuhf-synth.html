@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- twitter card content test -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cityfreqs" />
+  <meta name="twitter:creator" content="@cityfreqs" />
+  <meta property="og:url" content="https://www.cityfreqs.com.au/nuhf-synth.html" />
+  <meta property="og:title" content="NUHF SYNTH" />
+  <meta property="og:description" content="Parameterised NUHF transmitter synth using HTML 5." />
+  <meta property="og:image" content="https://www.cityfreqs.com.au/images/IoT_lamp-mobile.jpg" />  
+  <!-- end twitter card header -->
+	<link rel="shortcut icon" href="favicon.ico">
+	  <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootover.css" rel="stylesheet">
+    <link href="pilfer.css" rel="stylesheet">
+	<title>City Frequencies - PilferShush NUHF Synth</title>
+	</head>
+  	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <body style="background-color: #eee;">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="index.php">City Frequencies</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav">
+				<li><a href="audio.php">Audio</a></li>
+				<li><a href="video.php">Video</a></li>
+				<li><a href="apps.php">Apps</a></li>
+				<li class="dropdown">
+				  <a href="index.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects<span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="cfp.php">City Frequencies Project</a></li>
+					<li><a href="cv.php">Cafe Voyeur</a></li>
+					<li><a href="raem.php">Random Acts of Elevator Music</a></li>
+          <li><a href="pilfer.php">PilferShush</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+		</div>
+    </nav>
+    <script src="js/jquery.min.js"></script>
+  
+	<div class="jumbotron">
+		<div class="container">
+			<img class="img-responsive" src="images/nuhf/TwitchTest-01-low.jpg" alt="nuhf synth test spectrogram" width="100%" height="auto">
+		</div>
+	</div>
+
+	<div class="jumbotron">
+		<div class="container">
+	
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">HTML5 SYNTH NUHF transmitter vers. 1.1</h3>
+						</div>
+						<div class="panel-body">
+            <h2>NUHF audio beacon emulator</h2>
+              HTML 5/javascript (<a href="js/synth.js" target="_blank">source</a>) based audio synth coded to transmit inaudible near ultra high frequency (NUHF) tones.
+              <br /><br />
+              <strong>Letter Sequence Mode:</strong><br />
+              Alphabetic character sequence represented by an increasing NUHF frequency (each letter + step Hz at delay ms).
+              <br />
+              Audible sequence start tone of 3000 Hz. <br />
+              NUHF start tone is 18000 Hz "AAAAAA" and 19875 Hz "ZZZZZZ" is stop tone.
+              <br />
+              ie. if step == 75 Hz, then A = 18000hz, B = 18075hz, C = 18150Hz ... Z = 19875Hz
+              <br /><br /> 
+              NUHF alphabet tone sequence to play:
+              <br />
+              <div class="alphamessage">AAAAAABBBCCCDDDEEEFFFGGGHHHIIIJJJKKKLLLMMMNNNOOOPPPQQQRRRSSSTTTUUUZZZZZZ</div> 
+              <br /><br />
+              <strong>Binary Bits Mode:</strong><br />
+              Sequence using 2 frequency bits (representing 1 and 0) with a central, carrier frequency sentinel tone.
+              <br />
+              Audible sequence start tone of 3000 Hz. <br />
+              NUHF carrier sentinel frequency then alternating frequencies of set hertz distance representing binary 1s (carrier + distance) and 0s (carrier - distance). 
+              <br />
+              Sequence to encode and display a heart symbol in HTML, Char: &hearts; Dec: &#9829; Hex: &#x2665; 
+              <br /><br />
+              NUHF binary tone sequence to play: 
+              <br />
+              <div class="binarymessage">0010 0110 0110 0101</div>
+              <br /><br />
+              <strong>Clock FSK Mode:</strong><br />
+              Sequence using a steady clock pulse carrier frequency with payload above or below of 8 bits separated by step Hz in between clock pulses.
+              <br />
+              Sequence to encode and display example Heathkit ET3400 assembly program (orig 0000):<br />
+              <pre>
+              [opcode][binary representation]
+              BD FCBC 10111101 11111100 10111100
+              86 01   10000110 00000001 
+              20 07   00100000 00000111
+              D6 F1   11010110 11110001
+              CB 10   11001011 00010000
+              D7 F1   11010111 11110001
+              48      01001000
+              BD FE3A 10111101 11111110 00111010
+              CE 2F00 11001110 00101111 00000000
+              09      00001001
+              26 FD   00100110 11111101
+              16      00010110
+              5D      01011101
+              26 EC   00100110 11101100
+              86 01   10000110 00000001
+              DE F0   11011110 11110000
+              8C C10F 10001100 11000001 00001111
+              26 EA   00100110 11101010
+              20 DA   00100000 11011010
+              </pre>
+              
+              <br /><br />
+              NUHF Clock FSK tone sequence to play: 
+              <br />
+              <div class="clockfskmessage">10111101 11111100 10111100 10000110 00000001 00100000 00000111 11010110 11110001 11001011 00010000 11010111 11110001 01001000 10111101 11111110 00111010 11001110 00101111 00000000 00001001 00100110 11111101 00010110 01011101 00100110 11101100 10000110 00000001 11011110 11110000 10001100 11000001 00001111 00100110 11101010 00100000 11011010</div>
+              <br /><br />
+              <strong>Twitch Mode:</strong><br />
+              Text sequence derived from Australia's Privacy Act legislation, converted to uppercase, numbers converted to 4 bit binary, and transmitted within a 30 bit NUHF range of an OBS -> Twitch upstream -> downstream/VOD. (testing 18kHz - 19.5kHz range)
+              <br /><br />
+              NUHF sequence to play: 
+              <br />
+              <pre>
+              <div class="twitchmessage">
+              The objects of this Act are:
+              (a)  to promote the protection of the privacy of individuals; and
+              Authorised Version C2020C00237 registered 29/07/2020
+              Part I  Preliminary
+              Section 3
+              2  Privacy Act 1988 
+              Compilation No. 84  Compilation date: 01/07/2020  Registered: 29/07/2020
+              (b)  to recognise that the protection of the privacy of individuals 
+              is balanced with the interests of entities in carrying out their 
+              functions or activities; and
+              (c)  to provide the basis for nationally consistent regulation of 
+              privacy and the handling of personal information; and
+              (d)  to promote responsible and transparent handling of personal 
+              information by entities; and
+              (e)  to facilitate an efficient credit reporting system while 
+              ensuring that the privacy of individuals is respected; and
+              (f)  to facilitate the free flow of information across national 
+              borders while ensuring that the privacy of individuals is 
+              respected; and
+              (g)  to provide a means for individuals to complain about an 
+              alleged interference with their privacy; and
+              (h)  to implement Australia’s international obligation in relation 
+              to privacy.</div>
+              </pre>
+
+              <br /><br />
+              <hr />
+              <strong>Settings:</strong><br />
+              Frequency step (used in Letter Sequence and Clock FSK modes):<br />
+              <input type="radio" id="stepRadio" name="userstep" value="25">
+              <label for="25">25 Hz _ </label>
+              <input type="radio" id="stepRadio" name="userstep" value="50">
+              <label for="50">50 Hz _ </label>
+              <input type="radio" id="stepRadio" name="userstep" value="75" checked="checked">
+              <label for="75">75 Hz _ </label>
+              <input type="radio" id="stepRadio" name="userstep" value="100">
+              <label for="100">100 Hz _ </label>
+              <input type="radio" id="stepRadio" name="userstep" value="250">
+              <label for="250">250 Hz </label>
+              <br /><br />
+              Carrier/Clock frequency (not used in Letter Sequence Mode): <br />
+              <input type="radio" id="carrierRadio" name="usercarrier" value="18500" checked="checked">
+              <label for="18500">18500 Hz _ </label>
+              <input type="radio" id="carrierRadio" name="usercarrier" value="19000">
+              <label for="19000">19000 Hz _ </label>
+              <input type="radio" id="carrierRadio" name="usercarrier" value="19500">
+              <label for="19500">19500 Hz _ </label>
+              <input type="radio" id="carrierRadio" name="usercarrier" value="20000">
+              <label for="20000">20000 Hz _ </label>
+              <input type="radio" id="carrierRadio" name="usercarrier" value="20500">
+              <label for="20500">20500 Hz _ </label>
+              <input type="radio" id="carrierRadio" name="usercarrier" value="21000">
+              <label for="21000">21000 Hz </label>
+              <br /><br />
+              Binary Bit distance above and/or below carrier (used in Binary Bits and Clock FSK Modes): <br />
+              <input type="radio" id="distanceRadio" name="userdistance" value="100">
+              <label for="100">100 Hz _ </label>
+              <input type="radio" id="distanceRadio" name="userdistance" value="250" checked="checked">
+              <label for="250">250 Hz _ </label>
+              <input type="radio" id="distanceRadio" name="userdistance" value="500">
+              <label for="500">500 Hz </label>
+              <br /><br />
+              Tone delay (execution time < delay time):<br />
+              <input type="radio" id="delayRadio" name="userdelay" value="11">
+              <label for="11">11 ms _ </label>
+              <input type="radio" id="delayRadio" name="userdelay" value="25">
+              <label for="25">25 ms _ </label>
+              <input type="radio" id="delayRadio" name="userdelay" value="50">
+              <label for="50">50 ms _ </label>
+              <input type="radio" id="delayRadio" name="userdelay" value="100">
+              <label for="100">100 ms _ </label>
+              <input type="radio" id="delayRadio" name="userdelay" value="250">
+              <label for="250">250 ms _ </label>
+              <input type="radio" id="delayRadio" name="userdelay" value="500" checked="checked">
+              <label for="500">500 ms </label>
+              <br />
+              <hr />
+              <strong>Synth Mode:</strong>
+              <br />
+              <input type="radio" id="modeRadio" name="usermode" value="1" checked="checked">
+              <label for="alpha">Alphabet _ </label>
+              <input type="radio" id="modeRadio" name="usermode" value="2">
+              <label for="binary">Binary Bit _ </label>
+              <input type="radio" id="modeRadio" name="usermode" value="3">
+              <label for="fsk">Clock FSK _ </label>
+              <input type="radio" id="modeRadio" name="usermode" value="4">
+              <label for="fsk">Twitch </label>
+              <br /><br />
+              <button class="render" data-state="false" type="submit">PLAY SYNTH</button>
+              <br /><br />
+              <div class="display">playing frequency: nothing</div>
+              (<a href="javascript: location.reload()">Click to Reload</a>)
+              <br />
+              <hr />
+              <br /> 
+              <img class="img-responsive" src="images/nuhf/SynthJS-v1_1-test-01.jpg" width="75%" height="auto" alt="HTML5 NUHF transmitter frequency to alphabet signal spectrogram" />             
+              <em>image: <strong>Letter Sequence Mode</strong> showing start tone (3000hz) and successive nuhf tones (18000hz upwards) at 75Hz steps at 500ms per pulse.</em>
+              <br /><br /> 
+              <img class="img-responsive" src="images/nuhf/SynthJS-1_1-binary_bit-test.jpg" width="75%" height="auto" alt="HTML5 NUHF transmitter binary bit signal spectrogram" />
+              <em>image: <strong>Binary Bit Mode</strong> showing start tone (3000hz) and bits 1,0 at distance +/- 500Hz from the carrier at 20kHz at 25ms per pulse.</em>
+              <br /><br /> 
+              <img class="img-responsive" src="images/nuhf/SynthJS-v1_1-clockFSK-test.jpg" width="75%" height="auto" alt="HTML5 NUHF transmitter clock fsk signal spectrogram" />
+              <em>image: <strong>Clock FSK Mode</strong> showing start tone (3000hz) and bits 1,0 step at 100Hz at distance 500Hz from the carrier at 19kHz at 25ms per pulse.</em>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+  
+  <script src="js/synth.js"></script>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">
+			<span style="margin-left: 48.5%;">2020</span>
+			<a href="http://creativecommons.org/licenses/by-nc/3.0/"><img class="center-block" src="images/somerights.gif" width="88" height="31" border="0"></a>
+		</p>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>
