@@ -29,6 +29,8 @@ var startFreq = 18000; // start value
 var currentFreq = startFreq;
 var stepFreq = 75; // default value
 var candyLetter = "A"; // start value
+var twitchCarrier = 19750; // may not appear in stream
+var a4BitStart = startFreq + (50 * 26) + stepFreq;
 // fill array with A-Z
 var letterArray = [];
 for (var idx = 'A'.charCodeAt(0), end = 'Z'.charCodeAt(0); idx <= end; ++idx){
@@ -57,8 +59,9 @@ var render = document.querySelector('.render');
 masterVolume.gain.value = 0.5;
 oscillator.connect(masterVolume);
 masterVolume.connect(audioCtx.destination);
-//oscillator.type = 'sine';
-oscillator.type = 'square';
+// non-zero and freq jumps seem less pronounced with sine
+oscillator.type = 'sine';
+//oscillator.type = 'square';
 oscillator.frequency.value = baseFreq;
 
 /************************************************************************/
@@ -106,12 +109,23 @@ function playNUHFSequence() {
 // range 1500hz
 // bits 30
 */
+function rangeSequence() {
+  // play all the chars in order A-Z
+  //
+  letterArray.forEach(parseIt);
+  function parseIt(value, index, array) {
+    // value == A-Z, index == 0-25, array == letterArray
+    //console.log("letter index: " + index);
+    frequencyArray.push(startFreq + (stepFreq * index));
+  }
+}
 function getTwitchFreq(request) {
   // compare request to letterArray value and send the freq,
   // separate function as may need to tweak diff from alphabet mode 
-  for (var i = 0; i <= 26; i++) {
+  // change to get indexOf 
+  for (var i = 0; i <= 25; i++) {
     if (request === letterArray[i]) {
-      return currentFreq + (stepFreq * i);     
+      return startFreq + (stepFreq * i);     
     }
   }
 }
@@ -124,17 +138,23 @@ function load4BitBinary(c) {
   // 1 = 19400
   var freq = 0;
   var binaryChars = a4BitArray[c];
-  console.log("a4BitArray[c]: " + a4BitArray[c]);  
+  //console.log("a4BitArray[c]: " + a4BitArray[c]);  
   // convert to 4 x freqs add to freqArray
+  var bitFreq = startFreq + (stepFreq * 26) + stepFreq;
+  //console.log("bitFreq: " + bitFreq);
   for (var i = 0; i <= 3; i++) {
-    // this is a 0 or 1, idiot
+    // this is a 0 or 1
     // will need a carrier gap between multiple 0s or 1s
     if (binaryChars.charAt(i) === '0') {
-      frequencyArray.push(19350);
+      // Z + step, 19350
+      frequencyArray.push(Number(a4BitStart));
     }
     else {
-      frequencyArray.push(19400);
+      // Z + step + step, 19400
+      frequencyArray.push(Number(a4BitStart + stepFreq));
     }
+    // add twitchCarrier as gap
+    frequencyArray.push(twitchCarrier);
   }
 }
 /*
@@ -147,10 +167,11 @@ function loadTwitchSequence(charSequence) {
   // convert numbers to 4-bit binary (we have 4 bits spare)
   // init the array first
   frequencyArray = new Array();
-  // add start tone 3000 freqs
+  // add a ranging sequence covering all chars, quickly
+  rangeSequence();
   var candy;
   var upperSeq = charSequence.toUpperCase();
-  //console.log("upperSeq: " + upperSeq); 
+  console.log("upperSeq: " + upperSeq); 
   
   for (let candy of upperSeq) {
     //console.log("pre candy: " + candy);  
@@ -158,36 +179,44 @@ function loadTwitchSequence(charSequence) {
       // convert to 4-bit binary
       // one number is 4 freqs
       // function loads frequencyArray directly
-      console.log("load4BitArray[candy]: " + candy);  
+      //console.log("load4BitArray[candy]: " + candy);  
       load4BitBinary(candy);
+    }
+    else if (candy === " ") {
+      // add carrier
+      frequencyArray.push(twitchCarrier);
     }
     else {
       // simple A-Z freq convert
-      console.log("twitchFreq(candy): " + candy);  
+      //console.log("twitchFreq(candy): " + candy);  
       frequencyArray.push(getTwitchFreq(candy));
     }
   }
- 
+  
   //Ensure that execution duration is shorter than interval frequency
   intervalPlay = setInterval(playNUHFSequence, toneDelay); // delay in ms
 }
 function parseTwitch() {
   var htmlRegex = /(<([^>]+)>)/ig;
-  var regex = /\W/g;
+  var regex = /\W/g; // non-alphanum chars
+  var lineRegex = /\r?\n|\r/g; // newline
   var messageString = document.querySelector('.twitchmessage').innerHTML;
   messageString = messageString.replace(htmlRegex, "");
-  messageString = messageString.replace(regex, "");
+  messageString = messageString.replace(regex, " ");
+  messageString = messageString.replace(lineRegex, " ");
   console.log(messageString);
   return messageString;
 }
 function renderTwitch() {
   freqCounter = 0;
   // set the other vars
-  console.log("override any user settings.");
+  console.log("overriding any user settings with the following: ");
   stepFreq = 50;
   console.log("stepFreq: " + stepFreq);
   carrierFreq = 18000;
-  console.log("carrierFreq: " + carrierFreq);
+  console.log("startFreq: " + startFreq);
+  twitchCarrier = 20000;
+  console.log("twitchCarrier: " + twitchCarrier);
   toneDelay = 100;
   console.log("toneDelay: " + toneDelay);  
   loadTwitchSequence(parseTwitch());
