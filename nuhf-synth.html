@@ -71,7 +71,7 @@
 				<div class="col-sm-8 col-sm-offset-2">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h3 class="panel-title">HTML5 SYNTH NUHF transmitter vers. 1.1</h3>
+							<h3 class="panel-title">HTML5 SYNTH NUHF transmitter vers. 1.3</h3>
 						</div>
 						<div class="panel-body">
             <h2>NUHF audio beacon emulator</h2>
@@ -230,8 +230,25 @@ to privacy.</div>
               <input type="radio" id="modeRadio" name="usermode" value="3">
               <label for="fsk">Clock FSK _ </label>
               <input type="radio" id="modeRadio" name="usermode" value="4">
-              <label for="fsk">Twitch </label>
+              <label for="twit">Twitch Override</label>
               <br /><br />
+              <!--
+              <strong>Twitch Override Mode:</strong>
+              <br />
+              <input type="radio" id="overRadio" name="userover" value="0" checked="checked">
+              <label for="def">0.Default _ </label>
+              <input type="radio" id="overRadio" name="userover" value="1">
+              <label for="low">1.Low Freq _ </label>
+              <input type="radio" id="overRadio" name="userover" value="2">
+              <label for="stp">2.Step Freq _ </label>
+              <input type="radio" id="overRadio" name="userover" value="3">
+              <label for="dly">3.Tone Delay _ </label>
+              <input type="radio" id="overRadio" name="userover" value="4">
+              <label for="com">4.Nominal </label>
+              <br />
+              -->
+              <hr />
+              <br />
               <button class="render" data-state="false" type="submit">PLAY SYNTH</button>
               <br /><br />
               <div class="display">playing frequency: nothing</div>
@@ -247,6 +264,9 @@ to privacy.</div>
               <br /><br /> 
               <img class="img-responsive" src="images/nuhf/SynthJS-v1_1-clockFSK-test.jpg" width="75%" height="auto" alt="HTML5 NUHF transmitter clock fsk signal spectrogram" />
               <em>image: <strong>Clock FSK Mode</strong> showing start tone (3000hz) and bits 1,0 step at 100Hz at distance 500Hz from the carrier at 19kHz at 25ms per pulse.</em>
+              <br /><br /> 
+              <img class="img-responsive" src="images/nuhf/SynthJS-1_2-twitch-test.jpg" width="75%" height="auto" alt="HTML5 NUHF transmitter twitch stream test signal spectrogram" />
+              <em>image: <strong>Twitch Override Mode</strong> testing hardcoded settings with start tone (3000hz), full A-Z range, 20kHz carrier,  A-Z freqs starting at 18kHz, step of 50Hz and decimal numbers as 4 bit binary freqs, all at 100ms per pulse.</em>
 						</div>
 					</div>
 				</div>

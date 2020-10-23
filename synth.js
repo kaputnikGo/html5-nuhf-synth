@@ -3,7 +3,7 @@
 // PilferShush: ultra high frequency transmitter
 // for cityfreqs/pilfer.php
 // multiple transmission modes
-// Version 1.1
+// Version 1.3
 //
 */
 var body = document.querySelector('body');
@@ -24,13 +24,15 @@ var userStep = document.getElementsByName('userstep');
 var userCarrier = document.getElementsByName('usercarrier');
 var userDistance = document.getElementsByName('userdistance');
 var userDelay = document.getElementsByName('userdelay');
+var userOver = document.getElementsByName('userover');
+//
 var toneDelay = 500; // default
 var startFreq = 18000; // start value
 var currentFreq = startFreq;
 var stepFreq = 75; // default value
 var candyLetter = "A"; // start value
+var twitchMode = 0; // default
 var twitchCarrier = 19750; // may not appear in stream
-var a4BitStart = startFreq + (50 * 26) + stepFreq;
 // fill array with A-Z
 var letterArray = [];
 for (var idx = 'A'.charCodeAt(0), end = 'Z'.charCodeAt(0); idx <= end; ++idx){
@@ -50,13 +52,16 @@ a4BitArray[6] = "0110";
 a4BitArray[7] = "0111";
 a4BitArray[8] = "1000";
 a4BitArray[9] = "1001";
+var bitFreq = 0;
+var bitFreq0 = 19200;
+var bitFreq1 = 19500;
 
 var carrierFreq = 18500;
 var binaryDistance = 250;
 var zeroFreq = 0; //can be a diff freq or user freq.
 
 var render = document.querySelector('.render');
-masterVolume.gain.value = 0.5;
+masterVolume.gain.value = 0.66;
 oscillator.connect(masterVolume);
 masterVolume.connect(audioCtx.destination);
 // non-zero and freq jumps seem less pronounced with sine
@@ -139,19 +144,19 @@ function load4BitBinary(c) {
   var freq = 0;
   var binaryChars = a4BitArray[c];
   //console.log("a4BitArray[c]: " + a4BitArray[c]);  
-  // convert to 4 x freqs add to freqArray
-  var bitFreq = startFreq + (stepFreq * 26) + stepFreq;
   //console.log("bitFreq: " + bitFreq);
   for (var i = 0; i <= 3; i++) {
     // this is a 0 or 1
     // will need a carrier gap between multiple 0s or 1s
     if (binaryChars.charAt(i) === '0') {
-      // Z + step, 19350
-      frequencyArray.push(Number(a4BitStart));
+      // Z + step, 19350 - nom is diff
+      frequencyArray.push(Number(bitFreq0));
     }
     else {
       // Z + step + step, 19400
-      frequencyArray.push(Number(a4BitStart + stepFreq));
+      //frequencyArray.push(Number(bitFreq + stepFreq));
+      // nominal version:
+      frequencyArray.push(Number(bitFreq1));
     }
     // add twitchCarrier as gap
     frequencyArray.push(twitchCarrier);
@@ -172,7 +177,7 @@ function loadTwitchSequence(charSequence) {
   var candy;
   var upperSeq = charSequence.toUpperCase();
   console.log("upperSeq: " + upperSeq); 
-  
+
   for (let candy of upperSeq) {
     //console.log("pre candy: " + candy);  
     if (candy >= '0' && candy <= '9') {
@@ -192,7 +197,7 @@ function loadTwitchSequence(charSequence) {
       frequencyArray.push(getTwitchFreq(candy));
     }
   }
-  
+
   //Ensure that execution duration is shorter than interval frequency
   intervalPlay = setInterval(playNUHFSequence, toneDelay); // delay in ms
 }
@@ -207,18 +212,104 @@ function parseTwitch() {
   console.log(messageString);
   return messageString;
 }
-function renderTwitch() {
-  freqCounter = 0;
-  // set the other vars
-  console.log("overriding any user settings with the following: ");
+
+function twitchMode4() {
+  console.log("Twitch Mode 4 nominal override: ");
+  // attempting to get nominal frequency range
+  // will prob lose some of the 4 bit binary in the vod
+  stepFreq = 50; // same
+  console.log("stepFreq: " + stepFreq);
+  startFreq = 17800; // lower, end A-Z freq is 19100
+  console.log("startFreq: " + startFreq);
+  twitchCarrier = 19350; // mid of bits 0 and 1
+  console.log("twitchCarrier: " + twitchCarrier);
+  toneDelay = 100; // same
+  console.log("toneDelay: " + toneDelay);
+  bitFreq = 19200; // bit 0
+  console.log("bitFreq: " + bitFreq);  
+}
+function twitchMode3() {
+  console.log("Twitch Mode 3 delay override: ");
+  // increase pulse time, due to missing/degraded W-Z
   stepFreq = 50;
   console.log("stepFreq: " + stepFreq);
-  carrierFreq = 18000;
+  startFreq = 18000;
+  console.log("startFreq: " + startFreq);
+  twitchCarrier = 20000;
+  console.log("twitchCarrier: " + twitchCarrier);
+  toneDelay = 200;
+  console.log("toneDelay: " + toneDelay); 
+  bitFreq = startFreq + (stepFreq * 26) + stepFreq;
+  console.log("bitFreq: " + bitFreq);
+}
+function twitchMode2() {
+  console.log("Twitch Mode 2 stepFreq override: ");
+  // reduce stepFeq size to 40Hz, due to missing/degraded W-Z
+  stepFreq = 40;
+  console.log("stepFreq: " + stepFreq);
+  startFreq = 18000;
   console.log("startFreq: " + startFreq);
   twitchCarrier = 20000;
   console.log("twitchCarrier: " + twitchCarrier);
   toneDelay = 100;
-  console.log("toneDelay: " + toneDelay);  
+  console.log("toneDelay: " + toneDelay);
+  bitFreq = startFreq + (stepFreq * 26) + stepFreq;
+  console.log("bitFreq: " + bitFreq);
+}
+function twitchMode1() {
+  console.log("Twitch Mode 1 lowfreq override: ");
+  // reduce by 4 * stepFreqs, due to missing/degraded W-Z
+  stepFreq = 50;
+  console.log("stepFreq: " + stepFreq);
+  startFreq = 17800;
+  console.log("startFreq: " + startFreq);
+  twitchCarrier = 20000;
+  console.log("twitchCarrier: " + twitchCarrier);
+  toneDelay = 100;
+  console.log("toneDelay: " + toneDelay); 
+  bitFreq = startFreq + (stepFreq * 26) + stepFreq;
+  console.log("bitFreq: " + bitFreq);
+}
+function twitchMode0() {
+  console.log("Twitch Mode 0 default override: ");
+  stepFreq = 50;
+  console.log("stepFreq: " + stepFreq);
+  startFreq = 18000;
+  console.log("startFreq: " + startFreq);
+  twitchCarrier = 20000;
+  console.log("twitchCarrier: " + twitchCarrier);
+  toneDelay = 100;
+  console.log("toneDelay: " + toneDelay); 
+  bitFreq = startFreq + (stepFreq * 26) + stepFreq;
+  console.log("bitFreq: " + bitFreq);
+}
+function renderTwitch() {
+  freqCounter = 0;
+  // hard coded to nominal
+  twitchMode4();
+  /*
+  // rem as this stage of testing is fin
+  // set vars depending on mode selected
+  switch (twitchMode) {
+    case "0":
+      twitchMode0();
+      break;
+    case "1":
+      twitchMode1();
+      break;
+    case "2":
+      twitchMode2();
+      break;
+    case "3":
+      twitchMode3();
+      break;
+    case "4":
+      twitchMode4();
+      break;
+    default:
+      twitchMode0();
+  }
+  */
   loadTwitchSequence(parseTwitch());
 }
 
@@ -409,6 +500,13 @@ function getUserValues() {
   }
   console.log("toneDelay: " + toneDelay);  
   //
+  // get twitch override mode
+  for(i = 0; i < userOver.length; i++) { 
+    if(userOver[i].checked) { 
+      twitchMode = userOver[i].value;
+    }
+  }
+  console.log("twitchMode: " + twitchMode);  
 }
 render.onclick = function() {
   console.log("playing synth!");
@@ -416,7 +514,12 @@ render.onclick = function() {
     render.setAttribute('data-state', "true");
     render.innerHTML = "playing ...";
     getUserValues();
+    // add switch osc here?
+    // Standard values are "sine", "square", "sawtooth", "triangle" and "custom". The default is "sine".
+    // or custom to use a PeriodicWave
+    
     oscillator.start();
+    
     if (synthMode ==='1') {
       console.log("Alphabet mode selected.");
       renderPoem();
