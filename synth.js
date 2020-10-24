@@ -3,7 +3,7 @@
 // PilferShush: ultra high frequency transmitter
 // for cityfreqs/pilfer.php
 // multiple transmission modes
-// Version 1.3
+// Version 1.4
 //
 */
 var body = document.querySelector('body');
@@ -61,7 +61,7 @@ var binaryDistance = 250;
 var zeroFreq = 0; //can be a diff freq or user freq.
 
 var render = document.querySelector('.render');
-masterVolume.gain.value = 0.66;
+masterVolume.gain.value = 0.5; // vol increase causes ducking
 oscillator.connect(masterVolume);
 masterVolume.connect(audioCtx.destination);
 // non-zero and freq jumps seem less pronounced with sine
@@ -106,13 +106,6 @@ function playNUHFSequence() {
 // within current maximum frequencies -
 // need to test live stream frequency response
 //
-// test 1: 
-// floor 18000hz
-// ceiling 19500hz
-// step 50hz
-// delay 100ms
-// range 1500hz
-// bits 30
 */
 function rangeSequence() {
   // play all the chars in order A-Z
@@ -176,7 +169,7 @@ function loadTwitchSequence(charSequence) {
   rangeSequence();
   var candy;
   var upperSeq = charSequence.toUpperCase();
-  console.log("upperSeq: " + upperSeq); 
+  //console.log("upperSeq: " + upperSeq); 
 
   for (let candy of upperSeq) {
     //console.log("pre candy: " + candy);  
@@ -228,6 +221,8 @@ function twitchMode4() {
   bitFreq = 19200; // bit 0
   console.log("bitFreq: " + bitFreq);  
 }
+/*
+// rem'd unles need for testing new variants
 function twitchMode3() {
   console.log("Twitch Mode 3 delay override: ");
   // increase pulse time, due to missing/degraded W-Z
@@ -283,6 +278,7 @@ function twitchMode0() {
   bitFreq = startFreq + (stepFreq * 26) + stepFreq;
   console.log("bitFreq: " + bitFreq);
 }
+*/
 function renderTwitch() {
   freqCounter = 0;
   // hard coded to nominal
