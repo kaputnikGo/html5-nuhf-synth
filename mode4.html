@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- twitter card content test -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cityfreqs" />
+  <meta name="twitter:creator" content="@cityfreqs" />
+  <meta property="og:url" content="https://www.cityfreqs.com.au/nuhf-synth.html" />
+  <meta property="og:title" content="NUHF SYNTH" />
+  <meta property="og:description" content="Mode 4 NUHF transmitter synth using HTML 5." />
+  <meta property="og:image" content="https://www.cityfreqs.com.au/images/IoT_lamp-mobile.jpg" />  
+  <!-- end twitter card header -->
+	<link rel="shortcut icon" href="favicon.ico">
+	  <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootover.css" rel="stylesheet">
+    <link href="pilfer.css" rel="stylesheet">
+	<title>City Frequencies - NUHF Synth - Mode 4</title>
+	</head>
+  	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <body style="background-color: #eee;">
+  <script src="js/jquery.min.js"></script>
+
+	<div class="jumbotron">
+		<div class="container">
+	
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">HTML5 SYNTH NUHF Mode 4 transmitter vers. 1.0</h3>
+						</div>
+						<div class="panel-body">
+            <h2>NUHF audio beacon emulator</h2>
+              HTML 5/javascript (<a href="js/synth-mode4.js" target="_blank">source</a>) based audio synth coded to transmit inaudible near ultra high frequency (NUHF) tones.
+              <br /><br />
+              <strong>Twitch Mode 4:</strong><br />
+              Text sequences converted to uppercase, numbers converted to 4 bit binary, and transmitted within a 30 bit NUHF range of an OBS -> Twitch upstream -> downstream/VOD. (testing 18kHz - 19.5kHz range)
+              <br /><br />
+              <hr />
+              <br />
+              <h3><em>"the protection of the privacy of individuals is balanced with the <strong>interests of entities</strong>"</em></h3>
+              <br /><br />
+              <strong>Text selection from:</strong>
+              <br />
+              Privacy Act 1988, Compilation No.84 (July 2020):
+              <br />
+              Part I:<br />
+              <ol>
+                <li>1, 2, 2A (title, Object)</li>
+                <li>6, 6C, 6D (Part II Interpretation)</li>
+                <li>6FA, 6FB (Meaning of Health)</li>
+              </ol>
+              <br /><br />
+              Privacy Amendment(Public Health Contact Information) Act 2020:
+              <br />
+              Part VIIIA:<br />
+              <ol>
+                <li>Division 1 94A(Outline), 94B(Object), 94C(Constitutional)</li>
+                <li>Division 2 94D(Collection Covid app data)</li>
+                <li>Division 2 94E(Comm devices), 94F(COVIDSafe Data Store), 94G(Decrypting), 94H(Requiring use)</li>
+                <li>Division 3 94K(Data retain), 94L(Data deletion), 94M(Error delete), 94N(Effect deletion), 94P(Data period)</li>
+                <li>Division 4 94Q(PI), 94R(Breach), 94S(Data breach), 94T(Commissioner), 94U(Investigation), 94V(State privacy), 94W(Commissioner State), 94X(State Health)</li>
+                <li>Division 5 94Y(Data period), 94Z(Agencies), 94ZA(Reports), 94ZB(Commissioner), 94ZC(Data property), 94ZD(Other laws)</li>
+              </ol>
+              <br /><br />
+              <hr />
+              <br /><br />
+              <strong>Text passage selector:</strong>
+              <br />
+              <em>Only load one proper selection at a time, use "nothing" to null a particular group.</em>
+              <br /><br />
+              <label for="text-pa">Privacy Act 1988: </label>
+                <select name="text-pa" id="text-pa">
+                  <option value="0">nothing</option>
+                  <option value="1">1, 2, 2A</option>
+                  <option value="2">6, 6C, 6D</option>
+                  <option value="3">6FA, 6FB</option>
+                </select>
+                
+              <label for="text-co"> Health 2020: </label>
+                <select name="text-co" id="text-co">
+                  <option value="0">nothing</option>
+                  <option value="1">94A,B,C</option>
+                  <option value="2">94D</option>
+                  <option value="3">94E,F,G,H</option>
+                  <option value="4">94K,L,M,N,P</option>
+                  <option value="5">94Q,R,S,T,U,V,W,X</option>
+                  <option value="6">94Y,Z,ZA,ZB,ZC,ZD</option>
+                </select>  
+                <br><br>
+              <button class="loader" data-state="false" type="submit">LOAD TEXT</button>
+              (click twice to load next selection)
+              <hr />
+              <br /><br />
+              <pre>
+              <div class="loadmessage">
+              load text passage first...
+              </pre>
+              <br />
+              <hr />
+              <br />
+              <button class="render" data-state="false" type="submit">PLAY SYNTH</button>
+              <br /><br />
+              <div class="display">playing frequency: nothing</div>
+              (<a href="javascript: location.reload()">Click to Reload</a>)
+              <br />
+              <hr />
+              <br /> 
+              <br /><br /> 
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+  
+  <script src="js/synth-mode4.js"></script>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">
+			<span style="margin-left: 48.5%;">2020</span>
+			<a href="http://creativecommons.org/licenses/by-nc/3.0/"><img class="center-block" src="images/somerights.gif" width="88" height="31" border="0"></a>
+		</p>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>
