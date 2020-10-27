@@ -1,0 +1,49 @@
+/*
+pilfer.css -
+overrides for bootstrap for even better reading.
+column width for mobile width
+*/
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+}
+
+.col-sm-offset-2 {
+  margin-left: 5.67%;
+}
+
+.col-sm-8 {
+  width: 88%;
+}
+
+ol  li{
+  font-size: 10px;
+}
+
+#karaokemessage {
+  font-family: monospace,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+  background-color: black;
+  color: yellow;
+  text-align: left;
+  white-space: pre-line;
+  /*word-wrap: normal;*/
+}
+#statusLED {
+  /* visible status square for streaming */
+  display: inline-block;
+  margin-left:24px;
+  padding-top:40px;
+  width:100px;
+  height:100px;
+  background-color:gray;
+  color:white;
+  text-align:center;
+  vertical-align:middle;
+  font-weight:bold;
+}

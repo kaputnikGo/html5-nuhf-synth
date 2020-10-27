@@ -73,6 +73,18 @@ a4BitArray[9] = "1001";
 var bitFreq0 = 19200;
 var bitFreq1 = 19500;
 /************************************************************************/
+function statusStop() {
+  document.querySelector('#statusLED').style.backgroundColor = "red";
+  document.querySelector('#statusLED').innerHTML = "STOP";
+}
+function statusLoad() {
+  document.querySelector('#statusLED').style.backgroundColor = "grey";
+  document.querySelector('#statusLED').innerHTML = "LOAD";
+}
+function statusRun() {
+  document.querySelector('#statusLED').style.backgroundColor = "green";
+  document.querySelector('#statusLED').innerHTML = "RUN";
+}
 function initAudio() {
   console.log("Init audio");
   oscillator = audioCtx.createOscillator();
@@ -97,6 +109,7 @@ function stopIntervalPlay() {
   render.setAttribute('data-state', "false");
   render.innerHTML = "PLAY SYNTH";
   document.querySelector('.display').innerHTML = "playing frequency: finished";
+  statusStop();
   console.log("finished playing sequence.");
   // reset
   initAudio();
@@ -125,8 +138,7 @@ function msToTime(s) {
   s = (s - secs) / 60;
   var mins = s % 60;
   var hrs = (s - mins) / 60;
-  
-   return pad(mins) + ':' + pad(secs);
+  return pad(mins) + ':' + pad(secs);
 }
  
 function loadKaraoke() {
@@ -134,16 +146,14 @@ function loadKaraoke() {
   // twitchCarrier is a space char
   elemKaraoke = document.getElementById("loadmessage");
   karaokeLength = elemKaraoke.innerText.length;
-  console.log("karaokeLength: " + karaokeLength);
+  console.log("karaoke length: " + karaokeLength);
   document.querySelector('#karaokemessage').innerText = "";
-  document.querySelector('.textnums').innerHTML = "total: " + karaokeLength + " current: 0";
-  document.querySelector('.playtime').innerHTML = "est time: " + msToTime(Number(karaokeLength * 100));
 }
 function paintKaraoke() {
+  document.querySelector('.textnums').innerHTML = "total: " + frequencyArray.length + " current: " + freqCounter;
   if (freqCounter < karaokeLength) {
     document.querySelector('#karaokemessage').innerHTML += elemKaraoke.innerText[freqCounter];
     document.getElementById("karaokemessage").scrollTop = document.getElementById("karaokemessage").scrollHeight;
-    document.querySelector('.textnums').innerHTML = "total: " + karaokeLength + " current: " + freqCounter;
   }
   else {
     console.log("end of line");
@@ -221,6 +231,12 @@ function loadTwitchSequence(charSequence) {
       frequencyArray.push(getTwitchFreq(candy));
     }
   }
+  // set the displays
+  var arrLength = Number(frequencyArray.length);
+  console.log("frequency length: " + arrLength);
+  document.querySelector('.textnums').innerHTML = "total: " + arrLength + " current: 0";
+  document.querySelector('.playtime').innerHTML = "est time: " + msToTime(Number(arrLength * 100));
+  statusRun();
   //Ensure that execution duration is shorter than interval frequency
   intervalPlay = setInterval(playNUHFSequence, toneDelay); // delay in ms
 }
@@ -259,6 +275,7 @@ function getText() {
       // directly load the text block with the text
       document.querySelector('#loadmessage').innerHTML = data;
       document.querySelector('.textnums').innerHTML = "total: " + data.length + " current: 0";
+      statusLoad();
   })
 }
 function loadTextIndex() {

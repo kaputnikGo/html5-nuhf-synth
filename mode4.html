@@ -43,8 +43,6 @@
               <hr />
               <strong>Text passage selector:</strong>
               <br />
-              <em>Select one only, or "nothing" and "nothing" is PM statement</em>
-              <br /><br />
               <label for="text-pa">Privacy Act 1988: </label>
                 <select name="text-pa" id="text-pa">
                   <option value="0">nothing</option>
@@ -62,7 +60,9 @@
                   <option value="4">94K,L,M,N,P</option>
                   <option value="5">94Q,R,S,T,U,V,W,X</option>
                   <option value="6">94Y,Z,ZA,ZB,ZC,ZD</option>
-                </select>  
+                </select> 
+                
+                <div id="statusLED">WAIT</div>         
                 <br><br>
               <button class="loader" data-state="false" type="submit">LOAD TEXT</button>
               (click twice to load next selection)
@@ -77,8 +77,6 @@
               <div class="textnums">total: 0 current: 0</div>
               <div class="playtime">est time: 00:00</div>
               <hr />
-              <br />
-            
               <br />
               <button class="render" data-state="false" type="submit">PLAY SYNTH</button>
               <br /><br />
