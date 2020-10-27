@@ -1,0 +1,85 @@
+94E  COVID app data on communication devices
+A person commits an offence if:
+(a)  the person uploads, or causes to be uploaded, data from a 
+communication device to the National COVIDSafe Data 
+Store; and
+(b)  the data is COVID app data; and
+(c)  consent to the upload has not been given by:
+(i)  the COVIDSafe user in relation to that device; or
+(ii)  if the COVIDSafe user is unable to give consent—a 
+parent, guardian or carer of the COVIDSafe user; or
+(iii)  if the COVIDSafe user has requested a parent, guardian 
+or carer of the COVIDSafe user to act on the 
+COVIDSafe user’s behalf—that parent, guardian or 
+carer.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+
+94F  COVID app data in the National COVIDSafe Data Store
+(1)  A person commits an offence if:
+(a)  the person retains data on a database outside Australia; and
+(b)  the data is COVID app data that has been uploaded from a 
+communication device to the National COVIDSafe Data 
+Store.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+(2)  A person commits an offence if:
+(a)  the person discloses data to another person who is outside 
+Australia; and
+(b)  the data is COVID app data that has been uploaded from a 
+communication device to the National COVIDSafe Data 
+Store; and
+(c)  the person is not a person who:
+(i)  is employed by, or in the service of, a State or Territory 
+health authority; and
+(ii)  discloses the data for the purpose of, and only to the 
+extent required for the purpose of, undertaking contact 
+tracing.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+
+94G  Decrypting COVID app data
+A person commits an offence if:
+(a)  the person decrypts encrypted data; and
+(b)  the data is COVID app data that is stored on a 
+communication device.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+
+94H  Requiring the use of COVIDSafe
+(1)  A person commits an offence if the person requires another person
+to:
+(a)  download COVIDSafe to a communication device; or
+(b)  have COVIDSafe in operation on a communication device; 
+or
+(c)  consent to uploading COVID app data from a communication 
+device to the National COVIDSafe Data Store.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+(2)  A person commits an offence if the person:
+(a)  refuses to enter into, or continue, a contract or arrangement 
+with another person (including a contract of employment); or
+(b)  takes adverse action (within the meaning of the Fair Work 
+Act 2009) against another person; or
+(c)  refuses to allow another person to enter:
+(i)  premises that are otherwise accessible to the public; or
+(ii)  premises that the other person has a right to enter; or
+(d)  refuses to allow another person to participate in an activity; 
+or
+(e)  refuses to receive goods or services from another person, or 
+insists on providing less monetary consideration for the 
+goods or services; or
+(f)  refuses to provide goods or services to another person, or 
+insists on receiving more monetary consideration for the 
+goods or services;
+on the ground that, or on grounds that include the ground that, the 
+other person:
+(g)  has not downloaded COVIDSafe to a communication device; 
+or
+(h)  does not have COVIDSafe in operation on a communication 
+device; or
+(i)  has not consented to uploading COVID app data from a 
+communication device to the National COVIDSafe Data 
+Store.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+(3)  To avoid doubt:
+(a)  subsection (2) is a workplace law for the purposes of the Fair 
+Work Act 2009; and
+(b)  the benefit that the other person derives because of an 
+obligation of the person under subsection (2) is a workplace 
+right within the meaning of Part 3-1 of that Act.

@@ -1,0 +1,82 @@
+94K  COVID app data not to be retained
+The data store administrator must take all reasonable steps to 
+ensure that COVID app data is not retained on a communication 
+device:
+(a)  for more than 21 days; or
+(b)  in any case in which it is not possible to comply with 
+paragraph (a) within 21 days—for longer than the shortest 
+practicable period.
+
+94L  Deletion of registration data on request
+(1)  If the COVIDSafe user or former COVIDSafe user in relation to a 
+communication device, or a parent, guardian or carer of that 
+person, requests the data store administrator to delete any 
+registration data of the person that has been uploaded from the 
+device to the National COVIDSafe Data Store, the data store 
+administrator:
+(a)  must take all reasonable steps to delete the data from the 
+National COVIDSafe Data Store as soon as practicable; and
+(b)  if it is not practicable to delete the data immediately—must 
+not use or disclose the data for any purpose.
+(2)  A request under subsection (1) may only be made by a parent, 
+guardian or carer of the COVIDSafe user if:
+(a)  the COVIDSafe user is unable to make a request under 
+subsection (1); or
+(b)  the COVIDSafe user has requested that parent, guardian or 
+carer to act on the COVIDSafe user’s behalf.
+(3)  Subsection (1) does not:
+(a)  prevent the data store administrator from accessing data for 
+the purpose of, and only to the extent required for the 
+purpose of, confirming that the correct data is being deleted; 
+or
+(b)  require the data store administrator to delete from the 
+National COVIDSafe Data Store data relating to the person 
+that:
+(i)  was uploaded from another communication device in 
+relation to which another person is a COVIDSafe user; 
+and
+(ii)  was collected through the other device interacting with 
+the device mentioned in subsection (1).
+(4)  This section does not apply to data that is de-identified.
+
+94M  Deletion of data received in error
+A person who receives COVID app data in error must, as soon as 
+practicable:
+(a)  delete the data; and
+(b)  notify the data store administrator that the person received 
+the data.
+
+94N  Effect of deletion of COVIDSafe from a communication device
+(1)  The data store administrator must not collect from a person, 
+through a particular communication device, COVID app data
+relating to the person if the person is a former COVIDSafe user in 
+relation to that device.
+(2)  A person is a former COVIDSafe user, in relation to a 
+communication device, at a particular time if:
+(a)  COVIDSafe has been deleted from the device in relation to 
+which the person was the COVIDSafe user; and
+(b)  after COVIDSafe was last deleted from that device—
+COVIDSafe has not been downloaded to that device.
+
+94P  Obligations after the end of the COVIDSafe data period
+(1)  After the end of the day determined under subsection 94Y(1), the 
+data store administrator must not:
+(a)  collect any COVID app data; or
+(b)  make COVIDSafe available to be downloaded.
+(2)  As soon as reasonably practicable after the end of the day 
+determined under subsection 94Y(1), the data store administrator 
+must delete all COVID app data from the National COVIDSafe 
+Data Store.
+(3)  As soon as reasonably practicable after the deletion, the data store 
+administrator must:
+(a)  inform the Health Minister and the Commissioner that all 
+COVID app data has been deleted from the National 
+COVIDSafe Data Store; and
+(b)  take all reasonable steps to inform all COVIDSafe users 
+(other than former COVIDSafe users) in relation to 
+communication devices that:
+(i)  all COVID app data has been deleted from the National 
+COVIDSafe Data Store; and
+(ii)  COVID app data can no longer be collected; and
+(iii)  they should delete COVIDSafe from their 
+communication devices.

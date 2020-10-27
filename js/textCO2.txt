@@ -1,0 +1,113 @@
+94D  Collection, use or disclosure of COVID app data
+(1)  A person commits an offence if:
+(a)  the person collects, uses or discloses data; and
+(b)  the data is COVID app data; and
+(c)  the collection, use or disclosure is not permitted under this 
+section.
+Penalty:  Imprisonment for 5 years or 300 penalty units, or both.
+(2)  The collection, use or disclosure is permitted if:
+(a)  the person is employed by, or in the service of, a State or 
+Territory health authority, and the collection, use or
+disclosure is for the purpose of, and only to the extent 
+required for the purpose of, undertaking contact tracing; or
+(b)  the person is:
+(i)  an officer or employee of the data store administrator;
+or
+(ii)  a contracted service provider for a government contract 
+with the data store administrator;
+and the collection, use or disclosure is for the purpose of, and 
+only to the extent required for the purpose of:
+(iii)  enabling contact tracing by persons employed by, or in 
+the service of, State or Territory health authorities; or
+(iv)  ensuring the proper functioning, integrity or security of 
+COVIDSafe or of the National COVIDSafe Data Store; 
+or
+(c)  in the case of a collection or disclosure of COVID app data—
+the collection or disclosure is for the purpose of, and only to 
+the extent required for the purpose of:
+(i)  transferring encrypted data between communication 
+devices through COVIDSafe; or
+(ii)  transferring encrypted data, through COVIDSafe, from 
+a communication device to the National COVIDSafe 
+Data Store; or
+(d)  the collection, use or disclosure is for the purpose of, and 
+only to the extent required for the purpose of, the 
+Commissioner performing the functions or exercising the 
+powers of the Commissioner under or in relation to this Part; 
+or
+(e)  the collection, use or disclosure is for the purpose of, and 
+only to the extent required for the purpose of:
+(i)  investigating whether this Part has been contravened; or
+(ii)  prosecuting a person for an offence against this Part; or
+(f)  in the case of a use of COVID app data by the data store 
+administrator—the use is for the purpose of, and only to the 
+extent required for the purpose of, producing de-identified 
+statistical information about the total number of registrations 
+through COVIDSafe; or
+(g)  in the case of a use of COVID app data that the data store 
+administrator is required by section 94L to delete—the use 
+consists of access by the data store administrator for the 
+purpose of, and only to the extent required for the purpose of, 
+confirming that the correct data is being deleted.
+(3)  Subsection (1) does not apply to the collection of COVID app data
+if:
+(a)  the collection of the COVID app data:
+(i)  occurs as part of the collection, at the same time, of data 
+that is not COVID app data (non-COVID app data); 
+and
+(ii)  is incidental to the collection of the non-COVID app 
+data; and
+(b)  the collection of the non-COVID app data is permitted under 
+an Australian law; and
+(c)  the COVID app data:
+(i)  is deleted as soon as practicable after the person 
+becomes aware that it had been collected; and
+(ii)  is not otherwise accessed, used or disclosed by the 
+person after it was collected.
+Note:  A defendant bears an evidential burden in relation to the matters in 
+this subsection: see subsection 13.3(3) of the Criminal Code.
+(4)  The admissibility of the non-COVID app data as evidence in any 
+proceedings is not affected by the incidental collection of the 
+COVID app data, or by the subsequent deletion of the COVID app 
+data as required by subparagraph (3)(c)(i).
+(5)  COVID app data is data relating to a person that:
+(a)  has been collected or generated (including before the 
+commencement of this Part) through the operation of 
+COVIDSafe; and
+(b)  either:
+(i)  is registration data; or
+(ii)  is stored, or has been stored (including before the 
+commencement of this Part), on a communication 
+device.
+However, it does not include:
+(c)  information obtained, from a source other than directly from 
+the National COVIDSafe Data Store, in the course of 
+undertaking contact tracing by a person employed by, or in 
+the service of, a State or Territory health authority; or
+(d)  de-identified statistical information about the total number of 
+registrations through COVIDSafe that is produced by:
+(i)  an officer or employee of the data store administrator; 
+or
+(ii)  a contracted service provider for a government contract 
+with the data store administrator.
+(6)  Contact tracing is the process of identifying persons who have 
+been in contact with a person who has tested positive for the 
+coronavirus known as COVID-19, and includes:
+(a)  notifying a person that the person has been in contact with a 
+person who has tested positive for the coronavirus known as 
+COVID-19; and
+(b)  notifying a person who is a parent, guardian or carer of
+another person that the other person has been in contact with 
+a person who has tested positive for the coronavirus known 
+as COVID-19; and
+(c)  providing information and advice to a person who:
+(i)  has tested positive for the coronavirus known as 
+COVID-19; or
+(ii)  is a parent, guardian or carer of another person who has 
+tested positive for the coronavirus known as 
+COVID-19; or
+(iii)  has been in contact with a person who has tested 
+positive for the coronavirus known as COVID-19; or
+(iv)  is a parent, guardian or carer of another person who has 
+been in contact with a person who has tested positive for 
+the coronavirus known as COVID-19.

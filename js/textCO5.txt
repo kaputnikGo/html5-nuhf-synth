@@ -1,0 +1,197 @@
+94Q  COVID app data is taken to be personal information
+COVID app data relating to an individual is taken, for the purposes 
+of this Act, to be personal information about the individual.
+
+94R  Breach of requirement is an interference with privacy
+(1)  An act or practice in breach of a requirement of this Part in relation 
+to an individual constitutes an act or practice involving an 
+interference with the privacy of the individual for the purposes of 
+section 13.
+Note:  The act or practice may be the subject of a complaint under section 36.
+(2)  Subsections 7(1A) and (1B) do not limit what is taken to be an act 
+or practice for the purposes of subsection (1) of this section, or for 
+the purposes of the application of this Act in relation to an 
+interference with the privacy of an individual involving a breach of 
+a requirement of this Part.
+
+94S  Breach of requirement may be treated as an eligible data breach
+(1)  For the purposes of this Act, if:
+(a)  the data store administrator; or
+(b)  an officer or employee of the data store administrator; or
+(c)  a contracted service provider for a government contract with 
+the data store administrator;
+breaches a requirement of this Part in relation to COVID app data:
+(d)  the breach is taken to be an eligible data breach by the data 
+store administrator; and
+(e)  an individual to whom the data relates is taken to be at risk 
+from the eligible data breach.
+(2)  For the purposes of this Act, if:
+(a)  a State or Territory health authority; or
+(b)  person employed by, or in the service of, the State or 
+Territory health authority;
+breaches a requirement of this Part in relation to COVID app data:
+(c)  the breach is taken to be an eligible data breach by the State 
+or Territory health authority; and
+(d)  an individual to whom the data relates is taken to be at risk 
+from the eligible data breach.
+(3)  Part IIIC applies in relation to such a breach as if:
+(a)  subsection 26WE(3) and sections 26WF, 26WH and 26WJ
+did not apply in relation to the breach; and
+(b)  Subdivision B of Division 3 of that Part:
+(i)  required the data store administrator, or State or 
+Territory health authority, to notify the Commissioner 
+that there were reasonable grounds to believe that there 
+had been an eligible data breach; and
+(ii)  only required compliance with sections 26WK and 
+26WL in relation to the breach if the Commissioner 
+required the administrator or authority so to comply; 
+and
+(c)  sections 26WN, 26WP, 26WQ, 26WS and 26WT did not 
+apply in relation to the breach.
+(4)  Without limiting the circumstances in which the Commissioner 
+may, under subparagraph (3)(b)(ii), require the administrator or 
+authority so to comply, the Commissioner must so require if:
+(a)  the Commissioner is satisfied that the breach may be likely to 
+result in serious harm to any of the individuals to whom the 
+information relates; and
+(b)  subsection (5) does not apply.
+(5)  The Commissioner may decide not to require compliance, or to 
+allow an extended period for compliance, if the Commissioner is 
+satisfied on reasonable grounds that requiring compliance, or 
+requiring compliance within the ordinary period for compliance,
+would not be reasonable in the circumstances, having regard to the 
+following:
+(a)  the public interest;
+(b)  any relevant advice given to the Commissioner by:
+(i)  an enforcement body; or
+(ii)  the Australian Signals Directorate;
+(c)  such other matters (if any) as the Commissioner considers 
+relevant.
+(6)  Paragraph (5)(b) does not limit the advice to which the 
+Commissioner may have regard.
+
+94T  Commissioner may conduct an assessment relating to COVID 
+app data
+(1)  The Commissioner’s power under section 33C to conduct an 
+assessment includes the power to conduct an assessment of 
+whether the acts or practices of an entity or a State or Territory 
+authority in relation to COVID app data comply with this Part.
+(2)  Without limiting subsection 33C(2), if:
+(a)  the Commissioner is conducting under that subsection an
+assessment of a matter of a kind mentioned in subsection (1) 
+of this section; and
+(b)  the Commissioner has reason to believe that an entity or a 
+State or Territory authority being assessed has information or 
+a document relevant to the assessment;
+the Commissioner may, by written notice, require the entity or 
+authority to give the information or produce the document within 
+the period specified in the notice, which must not be less than 14 
+days after the notice is given to the entity or authority.
+Note:  For a failure to give information etc., see section 66.
+
+94U  Investigation under section 40 to cease if COVID data offence 
+may have been committed
+(1)  This section applies if, in the course of an investigation under 
+section 40, the Commissioner forms the opinion that:
+(a)  an offence against Division 2 of this Part; or
+(b)  an offence against section 6 of the Crimes Act 1914, or 
+section 11.1, 11.2, 11.4 or 11.5 of the Criminal Code, being 
+an offence that relates to an offence against that Division;
+may have been committed.
+(2)  The Commissioner must:
+(a)  inform the Commissioner of Police or the Director of Public 
+Prosecutions of that opinion; and
+(b)  in the case of an investigation under subsection 40(1), give a 
+copy of the complaint to the Commissioner of Police or the 
+Director of Public Prosecutions, as the case may be; and
+(c)  subject to subsection (5) of this section, discontinue the 
+investigation except to the extent that it concerns matters 
+unconnected with the offence that the Commissioner believes 
+may have been committed.
+(3)  If the Commissioner of Police or the Director of Public 
+Prosecutions:
+(a)  has been informed of the Commissioner’s opinion under 
+paragraph (2)(a); and
+(b)  decides that the matter will not be, or will no longer be, the 
+subject of proceedings for an offence;
+the Commissioner of Police or the Director of Public Prosecutions, 
+as the case requires, must give a written notice to that effect to the 
+Commissioner.
+(4)  If the Commissioner of Police or the Director of Public 
+Prosecutions:
+(a)  has been informed of the Commissioner’s opinion under 
+paragraph (2)(a); and
+(b)  is satisfied that an investigation relating to the matter, or 
+proceedings for an offence relating to the matter, will not be 
+jeopardised, or otherwise affected, by continuation of the 
+Commissioner’s investigation;
+the Commissioner of Police or the Director of Public Prosecutions, 
+as the case requires, may give a written notice to that effect to the 
+Commissioner.
+(5)  Upon receiving notice under subsection (3) or (4) the 
+Commissioner may continue the investigation discontinued under 
+paragraph (2)(c).
+
+94V  Referring COVID data matters to State or Territory privacy 
+authorities
+(1)  If:
+(a)  a complaint has been made under section 36 about an act or 
+practice that may involve a breach of a requirement of this 
+Part; and
+(b)  before the Commissioner commences, or after the 
+Commissioner has commenced, to investigate the matter, the 
+Commissioner forms the opinion that:
+(i)  the complainant has made, or could have made, a 
+complaint relating to that matter to a State or Territory
+privacy authority; and
+(ii)  that matter could be more conveniently or effectively 
+dealt with by that State or Territory authority;
+the Commissioner may decide not to investigate the matter, or not 
+to investigate the matter further.
+(2)  If the Commissioner so decides, the Commissioner must:
+(a)  transfer the complaint to that State or Territory authority; and
+(b)  give notice in writing to the complainant stating that the 
+complaint has been so transferred; and
+(c)  give to that State or Territory authority any information or 
+documents that relate to the complaint and are in the 
+possession, or under the control, of the Commissioner.
+(3)  A complaint transferred under subsection (2) is taken, for the 
+purposes of this Act, to have been made to that State or Territory 
+authority.
+
+94W  Commissioner may share information with State or Territory 
+privacy authorities
+(1)  Subject to subsection (2), the Commissioner may share information 
+or documents with a State or Territory privacy authority:
+(a)  for the purpose of the Commissioner exercising powers, or 
+performing functions or duties under this Act in relation to 
+the requirements of this Part; or
+(b)  for the purpose of the State or Territory privacy authority
+exercising its powers, or performing its functions or duties.
+(2)  The Commissioner may only share information or documents with 
+a State or Territory privacy authority under this section if:
+(a)  the information or documents were acquired by the 
+Commissioner in the course of exercising powers, or 
+performing functions or duties, under this Act; and
+(b)  the Commissioner is satisfied on reasonable grounds that the 
+State or Territory privacy authority has satisfactory 
+arrangements in place for protecting the information or 
+documents.
+(3)  To avoid doubt, the Commissioner may share information or 
+documents with a State or Territory privacy authority under this 
+section whether or not the Commissioner is transferring a 
+complaint or part of a complaint to the authority.
+
+94X  Application to State or Territory health authorities
+(1)  This Act applies in relation to a State or Territory health authority,
+as if the authority were an organisation, to the extent that the 
+authority deals with, or the activities of the authority relate to,
+COVID app data.
+(2)  However, subsection (1) does not, in relation to a State or Territory 
+health authority:
+(a)  have the effect of applying Australian Privacy Principle 9 in 
+relation to a government related identifier that has been 
+assigned by that State or Territory or by a State or Territory
+authority of that State or Territory; or
+(b)  have the effect of applying this Act in relation to data or 
+information that is not COVID app data.

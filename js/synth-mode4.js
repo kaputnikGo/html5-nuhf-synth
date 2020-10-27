@@ -11,21 +11,16 @@ var body = document.querySelector('body');
 // buttons
 var render = document.querySelector('.render');
 var loader = document.querySelector('.loader');
+var stopper = document.querySelector('.stopper');
 // text dropdowns
 var textPA = document.getElementById('text-pa');
 var textCO = document.getElementById('text-co');
+
 // webAudio init
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-var oscillator = audioCtx.createOscillator();
-var masterVolume = audioCtx.createGain();
-// gain increase can cause compression of bg music
-masterVolume.gain.value = 0.5;
-oscillator.connect(masterVolume);
-masterVolume.connect(audioCtx.destination);
-// non-zero and freq jumps seem less pronounced with sine
-oscillator.type = 'sine';
-// start sequence audible tone of 3000hz
-oscillator.frequency.value = 3000;
+var oscillator;
+var masterVolume;
+initAudio();
 var intervalPlay;
 // init vars, overrides in twitchMode()
 var toneDelay = 500; // default
@@ -49,6 +44,9 @@ textCOurls[4] = "./js/textCO4.txt";
 textCOurls[5] = "./js/textCO5.txt";
 textCOurls[6] = "./js/textCO6.txt";
 // freq loop vars
+var elemKaraoke;
+var karaokeLength = 0;
+var messageString;
 var frequencyArray = new Array();
 var bitFreqArray = new Array();
 var freqCounter = 0;
@@ -75,9 +73,23 @@ a4BitArray[9] = "1001";
 var bitFreq0 = 19200;
 var bitFreq1 = 19500;
 /************************************************************************/
+function initAudio() {
+  console.log("Init audio");
+  oscillator = audioCtx.createOscillator();
+  masterVolume = audioCtx.createGain();
+  // gain increase can cause compression of bg music
+  masterVolume.gain.value = 0.5;
+  oscillator.connect(masterVolume);
+  masterVolume.connect(audioCtx.destination);
+  // non-zero and freq jumps seem less pronounced with sine
+  oscillator.type = 'sine';
+  // start sequence audible tone of 3000hz
+  oscillator.frequency.value = 3000;
+}
 function stopIntervalPlay() {
-  // reset everything
+  // stop everything
   clearInterval(intervalPlay);
+  oscillator.stop();
   intervalPlay = 0;
   freqCounter = 0;
   freqNumber = 0;
@@ -86,8 +98,10 @@ function stopIntervalPlay() {
   render.innerHTML = "PLAY SYNTH";
   document.querySelector('.display').innerHTML = "playing frequency: finished";
   console.log("finished playing sequence.");
+  // reset
+  initAudio();
 }
-function playNUHFSequence() {
+function playNUHFSequence() { 
   if (freqCounter >= frequencyArray.length) {
     stopIntervalPlay();
     return;
@@ -95,9 +109,45 @@ function playNUHFSequence() {
   else {
     freqNumber = Number(frequencyArray[freqCounter]);
     document.querySelector('.display').innerHTML = "playing frequency: " + freqNumber + " hz";
-    oscillator.frequency.value = freqNumber;
+    oscillator.frequency.value = freqNumber; 
+    paintKaraoke();
     freqCounter += 1;
   }  
+} 
+function msToTime(s) {
+  function pad(n, z) {
+    z = z || 2;
+    return ('00' + n).slice(-z);
+  }
+  var ms = s % 1000;
+  s = (s - ms) / 1000;
+  var secs = s % 60;
+  s = (s - secs) / 60;
+  var mins = s % 60;
+  var hrs = (s - mins) / 60;
+  
+   return pad(mins) + ':' + pad(secs);
+}
+ 
+function loadKaraoke() {
+  // have loaded text passage into .karaokemessage so sing-a-long now
+  // twitchCarrier is a space char
+  elemKaraoke = document.getElementById("loadmessage");
+  karaokeLength = elemKaraoke.innerText.length;
+  console.log("karaokeLength: " + karaokeLength);
+  document.querySelector('#karaokemessage').innerText = "";
+  document.querySelector('.textnums').innerHTML = "total: " + karaokeLength + " current: 0";
+  document.querySelector('.playtime').innerHTML = "est time: " + msToTime(Number(karaokeLength * 100));
+}
+function paintKaraoke() {
+  if (freqCounter < karaokeLength) {
+    document.querySelector('#karaokemessage').innerHTML += elemKaraoke.innerText[freqCounter];
+    document.getElementById("karaokemessage").scrollTop = document.getElementById("karaokemessage").scrollHeight;
+    document.querySelector('.textnums').innerHTML = "total: " + karaokeLength + " current: " + freqCounter;
+  }
+  else {
+    console.log("end of line");
+  }
 }
 /************************************************************************/
 /*
@@ -178,25 +228,37 @@ function parseTwitch(messageString) {
   var htmlRegex = /(<([^>]+)>)/ig;
   var regex = /\W/g; // non-alphanum chars
   var lineRegex = /\r?\n|\r/g; // newline
-  var messageString = document.querySelector('.loadmessage').innerHTML;
+  messageString = document.querySelector('#loadmessage').innerHTML;
   messageString = messageString.replace(htmlRegex, "");
   messageString = messageString.replace(regex, " ");
   messageString = messageString.replace(lineRegex, " ");
   console.log(messageString);
+  loadKaraoke();
   return messageString;
 }
 function getText() {
   // using textPA, textCO get text blocks into string
-  // check only one sent, 0 == nothing
   // get url based upon index from textPAnum, textCOnum
   
-  var textUrl = textPAurls[textPAnum];//'./js/textPA1.txt';
+  // check only one num sent, 0 == nothing
+  var textUrl;
+  if (((textPAnum === 0) && (textCOnum === 0)) || ((textPAnum >= 1) && (textCOnum >= 1))) {
+    // have nothing, use PM placeholder
+    textUrl = "./js/introPM.txt";
+  }
+  else if (textPAnum >= 1) {
+    textUrl = textPAurls[textPAnum];// ie. './js/textPA1.txt';
+  }
+  else {
+    textUrl = textCOurls[textCOnum];// ie. './js/textCO1.txt';
+  }
   
   fetch(textUrl)
     .then(response => response.text())
     .then(function(data) {
       // directly load the text block with the text
-      document.querySelector('.loadmessage').innerHTML = data;
+      document.querySelector('#loadmessage').innerHTML = data;
+      document.querySelector('.textnums').innerHTML = "total: " + data.length + " current: 0";
   })
 }
 function loadTextIndex() {
@@ -204,10 +266,10 @@ function loadTextIndex() {
   // must do checks here for proper values
   
   // Privacy Act, 0 == nothing
-  textPAnum = textPA.value;
+  textPAnum = Number(textPA.value);
   console.log("textPA: " + textPAnum);
   // Health Amend, 0 == nothing
-  textCOnum = textCO.value;
+  textCOnum = Number(textCO.value);
   console.log("textCO: " + textCOnum);
 }
 function twitchMode() {
@@ -265,3 +327,19 @@ render.onclick = function() {
     render.innerHTML = "PLAY SYNTH";
   }  
 }
+stopper.onclick = function() {
+  console.log("STOP ALL");
+  if (stopper.getAttribute('data-state') === "false") {
+    stopper.setAttribute('data-state', "true");
+    // call a halt and reset
+    stopIntervalPlay();
+    render.setAttribute('data-state', "false");
+    render.innerHTML = "PLAY SYNTH";
+    stopper.innerHTML = "STOPPED";
+  }
+  else {
+    stopper.setAttribute('data-state', "false");
+    stopper.innerHTML = "STOP ALL";
+  }
+}  
+

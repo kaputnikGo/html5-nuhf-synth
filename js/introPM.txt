@@ -1,0 +1,52 @@
+Media release
+26 Apr 2020
+Prime Minister, Minister for Health, Minister for Government Services, Chief Medical Officer
+3.13 PM
+
+The Australian Government today launches the new voluntary coronavirus app, COVIDSafe.
+
+The app is an important public health initiative that will help keep you, your family, and your community safe from further spread of coronavirus through early notification of possible exposure.
+
+“Australians are doing an extraordinary job to flatten the curve and contain the spread of the coronavirus, but we cannot be complacent,” said Prime Minister Scott Morrison.
+
+“The Chief Medical Officer’s advice is we need the COVIDSafe app as part of the plan to save lives and save livelihoods. The more people who download this important public health app, the safer they and their family will be, the safer their community will be and the sooner we can safely lift restrictions and get back to business and do the things we love.”
+
+The health initiative uses technology to automate and improve what state and territory health officials already do manually. COVIDSafe will speed up the process of identifying people who have been in close contact with someone diagnosed with coronavirus, quickly stopping further spread of the virus in the community.
+
+Minister for Health, Greg Hunt thanked Australians for their actions during the pandemic, and said the app is part of the three key requirements for easing restrictions: Test, Trace and Respond.
+
+“We thank Australians for their help in adhering to the difficult but life-saving social distancing measures,” Minister Hunt said.
+
+“We are now calling on all Australians to download the COVIDSafe app to help protect you, your family and your community from further spread of COVID-19. This will be necessary if we are to start easing some of the difficult social distancing restrictions we have had to put in place” Minister Hunt said.
+
+“It will be one of the critical tools we will use to help protect the health of the community by quickly alerting people who may be at risk of having contact with COVID-19. If you’d been exposed, you’d want to know, wouldn’t you?”
+
+The app has received strong support from states and territories and the health sector, which recognise it is a valuable tool that will enhance the ability to respond rapidly to local outbreaks, and the confidence to know the virus is not silently spreading throughout communities.
+
+A new determination issued by the Minister for Health under the Biosecurity Act will ensure information provided voluntarily through the App will only be accessible for use by authorised state and territory health officials. Any other access or use will be a criminal offence. 
+
+Minister for Government Services, Stuart Robert described the App as being developed with one purpose: to stop the spread of coronavirus.
+
+“Once installed and running, the COVIDSafe app uses Bluetooth to look for other phones that also have the app installed,” Minister Robert said.
+
+“To be effective, users should have the app running in the background when they are coming into contact with others. Your phone does not need to be unlocked for the app to work.”
+
+“It then securely makes a ‘digital handshake’, which notes the date and time, distance and duration of the contact. All information collected by the app is securely encrypted and stored in the app on the user’s phone. No one, not even the user, can access it.”
+
+“Unless and until a person is diagnosed with COVID-19, no contact information collected in the app is disclosed or able to be accessed. Then, once the person agrees and uploads the data, only the relevant state or territory public health officials will have access to information. The only information they are allowed to access is that of close contacts – when a person has come within approximately 1.5 metres of another app user for 15 minutes or more – in their jurisdiction,” Minister Robert said.
+
+Welcoming the announcement, Australian Chief Medical Officer, Brendan Murphy said COVIDSafe is set to be a major tool in streamlining the process of identifying contacts after a person tests positive for coronavirus.
+
+“Finding out quickly means you can quarantine yourself or be treated much faster, protecting your family and friends from possible infection, and slowing the spread of the virus,” Professor Murphy said.
+
+“Without this technology, health officials have to rely on people being able to remember who they have been around, and being able to provide contact details for those people.”
+
+“It is important to note that only state and territory health officials will be able to use the information.”
+
+“COVIDSafe only keeps contact information for 21 days. This covers the maximum incubation period for the virus and the time it takes for someone to be tested for COVID-19,” Professor Murphy said.
+
+“Once the coronavirus pandemic is over, and Australia no longer needs the app, the app and the information on it will be deleted permanently. No virus, no app,” Minister Hunt said.
+
+Coronavirus is a serious and contagious respiratory disease with symptoms including fever, a dry cough, a sore throat and shortness of breath that has infected more than 2.8 million people globally and led to 200,000 deaths. In Australia around 6,700 people have contracted coronavirus and sadly 82 people have died.
+
+The App can be downloaded from the App stores.

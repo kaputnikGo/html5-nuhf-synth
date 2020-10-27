@@ -38,44 +38,12 @@
 							<h3 class="panel-title">HTML5 SYNTH NUHF Mode 4 transmitter vers. 1.0</h3>
 						</div>
 						<div class="panel-body">
-            <h2>NUHF audio beacon emulator</h2>
-              HTML 5/javascript (<a href="js/synth-mode4.js" target="_blank">source</a>) based audio synth coded to transmit inaudible near ultra high frequency (NUHF) tones.
-              <br /><br />
-              <strong>Twitch Mode 4:</strong><br />
-              Text sequences converted to uppercase, numbers converted to 4 bit binary, and transmitted within a 30 bit NUHF range of an OBS -> Twitch upstream -> downstream/VOD. (testing 18kHz - 19.5kHz range)
-              <br /><br />
-              <hr />
-              <br />
               <h3><em>"the protection of the privacy of individuals is balanced with the <strong>interests of entities</strong>"</em></h3>
-              <br /><br />
-              <strong>Text selection from:</strong>
               <br />
-              Privacy Act 1988, Compilation No.84 (July 2020):
-              <br />
-              Part I:<br />
-              <ol>
-                <li>1, 2, 2A (title, Object)</li>
-                <li>6, 6C, 6D (Part II Interpretation)</li>
-                <li>6FA, 6FB (Meaning of Health)</li>
-              </ol>
-              <br /><br />
-              Privacy Amendment(Public Health Contact Information) Act 2020:
-              <br />
-              Part VIIIA:<br />
-              <ol>
-                <li>Division 1 94A(Outline), 94B(Object), 94C(Constitutional)</li>
-                <li>Division 2 94D(Collection Covid app data)</li>
-                <li>Division 2 94E(Comm devices), 94F(COVIDSafe Data Store), 94G(Decrypting), 94H(Requiring use)</li>
-                <li>Division 3 94K(Data retain), 94L(Data deletion), 94M(Error delete), 94N(Effect deletion), 94P(Data period)</li>
-                <li>Division 4 94Q(PI), 94R(Breach), 94S(Data breach), 94T(Commissioner), 94U(Investigation), 94V(State privacy), 94W(Commissioner State), 94X(State Health)</li>
-                <li>Division 5 94Y(Data period), 94Z(Agencies), 94ZA(Reports), 94ZB(Commissioner), 94ZC(Data property), 94ZD(Other laws)</li>
-              </ol>
-              <br /><br />
               <hr />
-              <br /><br />
               <strong>Text passage selector:</strong>
               <br />
-              <em>Only load one proper selection at a time, use "nothing" to null a particular group.</em>
+              <em>Select one only, or "nothing" and "nothing" is PM statement</em>
               <br /><br />
               <label for="text-pa">Privacy Act 1988: </label>
                 <select name="text-pa" id="text-pa">
@@ -100,21 +68,57 @@
               (click twice to load next selection)
               <hr />
               <br /><br />
-              <pre>
-              <div class="loadmessage">
-              load text passage first...
-              </pre>
+              
+              <pre style="background-color: black;max-width:666px;"><textarea id="karaokemessage" rows="8" cols="80">City Frequencies presents:
+              a karaoke sing-a-long with an inauduble near ultra-high frequency synth</textarea></pre>
+
               <br />
+              <div class="display">playing frequency: nothing</div>
+              <div class="textnums">total: 0 current: 0</div>
+              <div class="playtime">est time: 00:00</div>
               <hr />
+              <br />
+            
               <br />
               <button class="render" data-state="false" type="submit">PLAY SYNTH</button>
               <br /><br />
-              <div class="display">playing frequency: nothing</div>
               (<a href="javascript: location.reload()">Click to Reload</a>)
+              <br /><br />
+              <button class="stopper" data-state="false" type="submit">STOP ALL</button>
               <br />
+              (will need to reload)
               <hr />
-              <br /> 
+              <br /><br />
+              <pre style="max-width:966px;"><div id="loadmessage" style="display:block;max-width:966px;">load text passage first...</div></pre>              
               <br /><br /> 
+              <h2>NUHF audio beacon emulator</h2>
+              HTML 5/javascript (<a href="js/synth-mode4.js" target="_blank">source</a>) based audio synth coded to transmit inaudible near ultra high frequency (NUHF) tones.
+              <br /><br />
+              <strong>Twitch Mode 4:</strong><br />
+              Text sequences converted to uppercase, numbers converted to 4 bit binary, and transmitted within a 30 bit NUHF range of an OBS -> Twitch upstream -> downstream/VOD. (17800Hz - 19500Hz range)
+              <br /><br />
+              <strong>Text selection from:</strong>
+              <br />
+              Privacy Act 1988, Compilation No.84 (July 2020):
+              <br />
+              Part I:<br />
+              <ol>
+                <li>1, 2, 2A (title, Object)</li>
+                <li>6, 6C, 6D (Part II Interpretation)</li>
+                <li>6FA, 6FB (Meaning of Health)</li>
+              </ol>
+              <br />
+              Privacy Amendment(Public Health Contact Information) Act 2020:
+              <br />
+              Part VIIIA:<br />
+              <ol>
+                <li>Division 1 94A(Outline), 94B(Object), 94C(Constitutional)</li>
+                <li>Division 2 94D(Collection Covid app data)</li>
+                <li>Division 2 94E(Comm devices), 94F(COVIDSafe Data Store), 94G(Decrypting), 94H(Requiring use)</li>
+                <li>Division 3 94K(Data retain), 94L(Data deletion), 94M(Error delete), 94N(Effect deletion), 94P(Data period)</li>
+                <li>Division 4 94Q(PI), 94R(Breach), 94S(Data breach), 94T(Commissioner), 94U(Investigation), 94V(State privacy), 94W(Commissioner State), 94X(State Health)</li>
+                <li>Division 5 94Y(Data period), 94Z(Agencies), 94ZA(Reports), 94ZB(Commissioner), 94ZC(Data property), 94ZD(Other laws)</li>
+              </ol>
 						</div>
 					</div>
 				</div>

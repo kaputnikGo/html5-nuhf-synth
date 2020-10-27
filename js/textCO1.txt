@@ -1,0 +1,70 @@
+Privacy Amendment (Public Health 
+Contact Information) Act 2020
+Authorised Version C2020A00044
+94A  Simplified outline of this Part
+There are several serious offences relating to COVID app data and 
+COVIDSafe. They deal with:
+•  non-permitted collection, use or disclosure relating to COVID 
+app data; and
+•  uploading COVID app data without consent; and
+•  retaining or disclosing uploaded data outside Australia; and
+•  decrypting encrypted COVID app data; and
+•  requiring participation in relation to COVIDSafe.
+Other specific obligations relate to deletion of data and what is to 
+happen after the COVIDSafe data period has ended (as determined 
+by the Health Minister).
+The general privacy law provided by this Act is applied to the 
+requirements of this Part, in particular by:
+•  ensuring that COVID app data is taken to be personal 
+information and breaches of this Part are interferences with 
+privacy; and
+•  enhancing the Commissioner’s role in dealing with eligible 
+data breaches, making assessments and conducting 
+investigations in relation to this Part; and
+•  enabling the Commissioner to refer matters to, and share 
+information or documents with, State or Territory privacy 
+authorities; and
+•  providing for this Act to apply to State or Territory health 
+authorities in relation to COVID app data.
+This Part imposes on State or Territory health authorities the Act’s 
+rules and privacy protections, and Commonwealth oversight, in 
+relation to COVID app data, as Commonwealth property that those 
+authorities receive.
+This Part also cancels the effect of Australian laws that are 
+inconsistent with the prohibitions in this Part.
+
+94B  Object of this Part
+The object of this Part is to assist in preventing and controlling the 
+entry, emergence, establishment or spread of the coronavirus 
+known as COVID-19 into Australia or any part of Australia by 
+providing stronger privacy protections for COVID app data and 
+COVIDSafe users in order to:
+(a)  encourage public acceptance and uptake of COVIDSafe; and
+(b)  enable faster and more effective contact tracing.
+
+94C  Constitutional basis of this Part
+Principal constitutional basis
+(1)  This Part relies on the Commonwealth’s legislative powers with 
+respect to matters that are peculiarly adapted to the government of 
+a nation and cannot otherwise be carried on for the benefit of the 
+nation.
+Additional operation of this Part
+(2)  In addition to subsection (1), this Part also has effect as provided 
+by subsections (3) to (5).
+(3)  This Part also has effect as if a reference in this Part to COVID app 
+data were expressly confined to a reference to COVID app data 
+that was collected or generated for the purposes of quarantine
+(within the meaning of paragraph 51(ix) of the Constitution).
+(4)  This Part also has effect as if a reference in this Part to COVID app 
+data were expressly confined to a reference to COVID app data 
+that was collected or generated using a service of a kind to which 
+paragraph 51(v) of the Constitution applies (postal, telegraphic, 
+telephonic and other like services).
+(5)  This Part also has effect as if it were expressly confined to giving 
+effect to Australia’s obligations under the International Covenant 
+on Civil and Political Rights done at New York on 16 December 
+1966 ([1980] ATS 23), and in particular Article 17 of the 
+Covenant, in relation to COVID app data.
+Note:  The Covenant is set out in Australian Treaty Series 1980 No. 23 
+([1980] ATS 23) and could in 2020 be viewed in the Australian 
+Treaties Library on the AustLII website (www.austlii.edu.au).
