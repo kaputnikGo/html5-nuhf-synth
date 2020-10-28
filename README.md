@@ -15,3 +15,4 @@ video streaming and music streaming services.
 Just a repository at this time. Code is functional but html/css display is within specific contexts not present here. Some JS includes (JQuery) are local 
 and not included in this repo presently.
 
+<img src="https://github.com/kaputnikGo/html5-nuhf-synth/blob/master/images/Mode4-running.jpg" height="612px" />
