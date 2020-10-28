@@ -15,4 +15,8 @@ video streaming and music streaming services.
 Just a repository at this time. Code is functional but html/css display is within specific contexts not present here. Some JS includes (JQuery) are local 
 and not included in this repo presently.
 
+Image below: Current GUI state of a running instance, displaying text readout and parsing alphanums to NUHF frequencies
 <img src="https://github.com/kaputnikGo/html5-nuhf-synth/blob/master/images/Mode4-running.jpg" height="612px" />
+
+Image below: Spectrogram of intro sequence with yellow coloured comments indicating events:
+<img src="https://github.com/kaputnikGo/html5-nuhf-synth/blob/master/images/nuhf/Mode4_intro.jpg" height="612px" />
